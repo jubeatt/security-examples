@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Hello</div>
+
+    <script>
+      const qs = new URLSearchParams(location.search)
+      const target = qs.get('redirect')
+      if (target) {
+        location.assign(target)
+      }
+    </script>
+  </body>
+</html>
