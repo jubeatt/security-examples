@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <!-- solution1: "><img src="x" onerror="alert(1)" /> -->
+    <!-- solution2: " tabindex="1" onfocus="alert(1)" /> -->
+
+    <script>
+      const qs = new URLSearchParams(location.search)
+      const clazz = qs.get('clazz')
+      const content = document.getElementById('content')
+      content.innerHTML = `
+        <div class="${clazz}">Hello</div>
+      `
+    </script>
+  </body>
+</html>
