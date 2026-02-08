@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.7/purify.min.js"></script>
+    <script>
+      const html = `<div><img src="x" onerror="alert(1)"></div>`
+      const clean = DOMPurify.sanitize(html)
+      console.log(clean) // <div><img src="x"></div>
+    </script>
+  </body>
+</html>
