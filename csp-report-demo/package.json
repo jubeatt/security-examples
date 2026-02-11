@@ -1,0 +1,19 @@
+{
+  "name": "csp-report-demo",
+  "version": "1.0.0",
+  "description": "CSP Report-Only Demo with Express Server",
+  "main": "csp-report-server.js",
+  "scripts": {
+    "start": "node csp-report-server.js"
+  },
+  "keywords": [
+    "csp",
+    "security",
+    "report-uri"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

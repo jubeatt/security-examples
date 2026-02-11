@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSP Report-URI Demo</title>
+  </head>
+  <body>
+    <h1>CSP Report-URI Demo</h1>
+    <p>這個頁面包含一個違反 CSP 的 inline script。</p>
+    <p>CSP Policy: <code>script-src 'none'</code></p>
+    <p>違規報告會被發送到: <code>http://localhost:3000/csp-report</code></p>
+    <p>檢查你的終端機 console，應該會看到違規報告！</p>
+
+    <!-- 這個 inline script 違反了 script-src 'none' 的政策 -->
+    <script>
+      alert('這個 alert 會因為 Report-Only 模式而正常執行，但同時會發送違規報告')
+    </script>
+  </body>
+</html>
