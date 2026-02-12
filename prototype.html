@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 利用 prototype 污染 innerHTML
+      Object.prototype.innerHTML = '<img src="x" onerror="alert(1)">'
+
+      const qs = new URLSearchParams(location.search)
+      const search = qs.get('search')
+
+      const createElement = (config) => {
+        const element = document.createElement(config.tag)
+        if (config.innerHTML) {
+          element.innerHTML = config.innerHTML
+        }
+
+        if (config.innerText) {
+          element.innerText = config.innerText
+        }
+        return element
+      }
+
+      document.body.appendChild(
+        createElement({
+          tag: 'h2',
+          innerText: `Search Term: ${search}`,
+        }),
+      )
+    </script>
+  </body>
+</html>
